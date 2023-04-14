@@ -1077,7 +1077,14 @@
 		}
 	}
 }
-// accordion
+//blog
+.blog-active-image {
+	border: 6px solid #f25248;
+	opacity: 0.75;
+	transition: 0.25s ease-in-out;
+}
+
+// footer accordion
 .accordion {
 	cursor: pointer;
 	user-select: none;

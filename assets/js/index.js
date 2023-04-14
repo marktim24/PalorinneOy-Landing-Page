@@ -6,12 +6,16 @@ $(document).ready(function () {
 		}
 	})
 	$('.img').click(function () {
+		$('img').removeClass('blog-active-image')
+		$(this).addClass('blog-active-image')
+
 		var newImageSrc = $(this).attr('src')
 		var newDate = $(this).data('date')
 		var newLocation = $(this).data('location')
 		var newDescription = $(this).data('description')
 
 		$('.images__blog-first').attr('src', newImageSrc)
+
 		$('.blog-date').text(newDate)
 		$('.blog-location').text(newLocation)
 		$('.blog-description').text(newDescription)
@@ -22,3 +26,8 @@ $(document).ready(function () {
 		$(this).next('.accordion-list').slideToggle('fast')
 	})
 })
+
+$('.img').removeClass('active-image')
+
+// Add the active-image class to the clicked image
+$(this).addClass('active-image')
