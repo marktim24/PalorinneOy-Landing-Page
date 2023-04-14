@@ -5,6 +5,17 @@ $(document).ready(function () {
 			$(this).next('.accordion-list').hide()
 		}
 	})
+	$('.img').click(function () {
+		var newImageSrc = $(this).attr('src')
+		var newDate = $(this).data('date')
+		var newLocation = $(this).data('location')
+		var newDescription = $(this).data('description')
+
+		$('.images__blog-first').attr('src', newImageSrc)
+		$('.blog-date').text(newDate)
+		$('.blog-location').text(newLocation)
+		$('.blog-description').text(newDescription)
+	})
 
 	$('.accordion-toggle').click(function () {
 		$(this).toggleClass('open')
