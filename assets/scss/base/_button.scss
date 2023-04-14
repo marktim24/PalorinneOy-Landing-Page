@@ -1,0 +1,73 @@
+.btn {
+  font-weight: 700;
+  padding: 17px 45px;
+  border-radius: 5px;
+  &:focus {
+    box-shadow: none;
+  }
+
+  @each $name, $value in $colors {
+    &__#{$name} {
+      color: set-text-color($value);
+      background-color: $value;
+      &.shadow {
+        box-shadow: none !important;
+
+        &:hover {
+          box-shadow: 0 15px 30px transparentize($value, 0.5) !important;
+        }
+      }
+    }
+
+    &__outlined--#{$name} {
+      border: 2px solid $value;
+      color: $value;
+      opacity: 0.3;
+      background-color: transparent;
+      transition: 0.5s;
+
+      &.b-1 {
+        border: 1px solid $value;
+      }
+
+      &.h__black {
+        &:hover {
+          background-color: color("black") !important;
+        }
+      }
+
+      &.no__opacity {
+        opacity: 1 !important;
+      }
+
+      &.shadow {
+        box-shadow: none !important;
+
+        &:hover {
+          box-shadow: 0 15px 30px transparentize($value, 0.5);
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+        background-color: $value;
+        color: white !important;
+
+        &.darkblue {
+          color: color("darkblue") !important;
+        }
+
+        &.pink {
+          color: color("pink") !important;
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  &__50 {
+    border-radius: 50px;
+  }
+}
+/* item list */
