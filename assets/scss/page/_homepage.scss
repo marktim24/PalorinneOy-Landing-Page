@@ -197,7 +197,6 @@
 	&__service-img {
 		.img {
 			width: 100%;
-			height: 385px;
 			object-fit: contain;
 		}
 		.link {
@@ -296,6 +295,25 @@
 			transform: scaleX(-1);
 		}
 	}
+
+	@media screen and (max-width: $br-sm) {
+		transform: scale(1);
+		img {
+			transform: scaleX(-1);
+		}
+	}
+	@media screen and (max-width: $br-xs) {
+		font-size: 50px !important;
+	}
+	$br-xxs: 375px;
+	$br-xx: 425px;
+	$br-xs: 480px;
+	$br-mm: 512px;
+	$br-sm: 576px;
+	$br-md: 768px;
+	$br-lg: 992px;
+	$br-xl: 1140px;
+	$br-xxl: 1200px;
 }
 
 .btn {
@@ -1082,6 +1100,12 @@
 	border: 6px solid #f25248;
 	opacity: 0.75;
 	transition: 0.25s ease-in-out;
+}
+.desktop-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 25px;
+	margin-left: 50px;
 }
 
 // footer accordion

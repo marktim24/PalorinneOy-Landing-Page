@@ -25,9 +25,22 @@ $(document).ready(function () {
 		$(this).toggleClass('open')
 		$(this).next('.accordion-list').slideToggle('fast')
 	})
+
+	var swiper = new Swiper('.swiper-container', {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		breakpoints: {
+			768: {
+				enabled: true,
+			},
+		},
+	})
 })
-
-$('.img').removeClass('active-image')
-
-// Add the active-image class to the clicked image
-$(this).addClass('active-image')
