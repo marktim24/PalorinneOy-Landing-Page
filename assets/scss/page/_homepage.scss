@@ -1101,11 +1101,48 @@
 	opacity: 0.75;
 	transition: 0.25s ease-in-out;
 }
-.desktop-grid {
+.image-container.desktop-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 25px;
 	margin-left: 50px;
+}
+
+.grid-item {
+	width: calc((100% - 20px) / 3);
+	margin-bottom: 10px;
+}
+
+.swiper-slide {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.mobile-only {
+	display: none;
+}
+
+@media (max-width: 991px) {
+	.mobile-only {
+		display: block;
+	}
+}
+
+@media (min-width: 1200px) {
+	.swiper-wrapper {
+		display: contents !important;
+	}
+}
+
+@media (max-width: 992px) {
+	.grid-item {
+		width: 100%;
+	}
+	.swiper-slide {
+		margin-right: 10px;
+	}
 }
 
 // footer accordion

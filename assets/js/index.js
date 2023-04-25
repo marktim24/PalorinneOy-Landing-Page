@@ -1,3 +1,31 @@
+function initSwiper() {
+	swiper = new Swiper('.swiper-container', {
+		slidesPerView: 3,
+		spaceBetween: 10,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	})
+
+	if (breakpoint.matches) {
+		swiper.navigation.enable()
+	} else {
+		swiper.navigation.disable()
+	}
+}
+
+function moveTextBlock() {
+	var windowWidth = $(window).width()
+	if (windowWidth < 1200) {
+		// Move the block inside col-7 for smaller screens
+		$('#slider-heading').prependTo('#col-7')
+	} else {
+		// Move the block back to its original position for larger screens
+		$('#slider-heading').prependTo('#container')
+	}
+}
+
 $(document).ready(function () {
 	$('.accordion-toggle').each(function (index) {
 		if (index !== 1) {
@@ -26,21 +54,12 @@ $(document).ready(function () {
 		$(this).next('.accordion-list').slideToggle('fast')
 	})
 
-	var swiper = new Swiper('.swiper-container', {
-		slidesPerView: 1,
-		spaceBetween: 10,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true,
-		},
-		breakpoints: {
-			768: {
-				enabled: true,
-			},
-		},
-	})
+	initSwiper()
+	$(window).resize(initSwiper)
+	breakpoint.addListener(initSwiper)
+
+	moveTextBlock()
+	$(window).resize(moveTextBlock)
+	initSwiper()
+	breakpoint.addListener(initSwiper)
 })
