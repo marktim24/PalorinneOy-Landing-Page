@@ -18,7 +18,6 @@ function initSwiper() {
 function moveTextBlock() {
 	var windowWidth = $(window).width()
 	if (windowWidth < 1200) {
-		// Move the block inside col-7 for smaller screens
 		$('#slider-heading').prependTo('#col-7')
 	} else {
 		// Move the block back to its original position for larger screens
@@ -27,6 +26,25 @@ function moveTextBlock() {
 }
 
 $(document).ready(function () {
+	$('.wrapper__slider-testi').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: false,
+		arrows: true,
+		prevArrow: '.wrapper__arrows .left',
+		nextArrow: '.wrapper__arrows .right',
+	})
+
+	$("a[href^='#click-']").on('click', function (e) {
+		e.preventDefault()
+		$('html, body').animate(
+			{
+				scrollTop: $($(this).attr('href')).offset().top,
+			},
+			1000
+		)
+	})
+
 	$('.accordion-toggle').each(function (index) {
 		if (index !== 1) {
 			// Exclude the second accordion (index 1)

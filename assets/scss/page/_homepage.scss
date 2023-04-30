@@ -1113,7 +1113,39 @@
 	margin-bottom: 10px;
 }
 
-.swiper-slide {
+.swiper-button-next,
+.swiper-button-prev {
+	&::after {
+		content: none;
+	}
+}
+
+#swiper-button-next,
+#swiper-button-prev {
+	display: none;
+	@media (max-width: 1200px) {
+		display: flex;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background: #f25248;
+		&::after {
+			content: '';
+			display: flex;
+			width: 100%;
+			height: 100%;
+			background-image: url('/assets/images/arrow-icon.svg');
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+	}
+}
+
+#swiper-button-prev {
+	transform: rotate(-180deg);
+}
+
+.swipe-slider {
 	display: flex;
 	justify-content: center;
 	align-items: center;
