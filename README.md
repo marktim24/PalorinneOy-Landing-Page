@@ -4,6 +4,8 @@ Welcome to the GitHub repository for the Palorinne OY Landing Page! This project
 
 You can access the live version of the landing page [here](https://marktim24.github.io/PalorinneOy-Landing-Page/).
 
+![Project Preview Image](/ProjectPreview.webp)
+
 ## 🚀 Features
 
 The landing page includes the following sections:
